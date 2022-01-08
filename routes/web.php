@@ -5,7 +5,7 @@ use App\Http\Controllers\TimelineController;
 
 Route::view('/', 'welcome');
 
-Route::middleware('auth')->group(function (){
+Route::middleware('auth')->group(function () {
    Route::get('timeline', TimelineController::class)->name('timeline');
    Route::view('/dashboard', 'dashboard')->name('dashboard');
 });
