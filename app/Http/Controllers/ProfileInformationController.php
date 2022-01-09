@@ -11,7 +11,7 @@ class ProfileInformationController extends Controller
     {
         return view('users.show', [
             'user' => $user,
-            'statuses' => $user->statuses()->latest()->get()
+            'statuses' => $user->statuses()->latest()->limit(10)->get()
         ]);
     }
 }
