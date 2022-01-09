@@ -86,4 +86,14 @@ class User extends Authenticatable
     {
         return $this->follows()->save($user);
     }
+
+    public function unfollow(User $user)
+    {
+        return $this->follows()->detach($user); // Untuk menghapus pivot table
+    }
+
+    public function hasFollow(User $user)
+    {
+        return $this->follows()->where('following_user_id', $user->id)->exists();
+    }
 }

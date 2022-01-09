@@ -8,7 +8,7 @@
             <div>
                <h1 class="font-semibold mb-3 ml-5 mt-3 ">
                   {{ $user->name }}
-                  {{-- @if (Auth::user()->isNot($user))
+                  @if (Auth::user()->isNot($user))
                   <form action="{{ route('following.store', $user) }}" method="post" class="inline">
                      @csrf
                      @if (Auth::user()->follows()->where('following_user_id', $user->id)->first())
@@ -18,8 +18,8 @@
                      @endif
                   </form>
                   @else
-                     <a href="{{ route('profile.edit') }}" class="flex-shrink-0 inline-flex items-center px-2 py-1 ml-3 border border-black rounded-md font-semibold text-sm text-black tracking-widest hover:bg-gray-200 focus:outline-none focus:border-gray-700 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">Edit Profile</a>
-                  @endif --}}
+                     <a href="" class="flex-shrink-0 inline-flex items-center px-2 py-1 ml-3 border border-black rounded-md font-semibold text-sm text-black tracking-widest hover:bg-gray-200 focus:outline-none focus:border-gray-700 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">Edit Profile</a>
+                  @endif
                </h1>
                
                <x-statistic :user="$user"/>
