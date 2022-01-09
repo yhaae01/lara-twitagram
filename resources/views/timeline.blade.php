@@ -28,28 +28,16 @@
                </div>
             </div>
          </div>
+
          <div class="col-span-4">
             <h1 class="font-semibold mb-4">Recent Follow</h1>
             <x-card>
                <div class="space-y-5">
-                  @foreach (Auth::user()->follows()->limit(5)->get() as $user)
-                     <div class="flex items-center">
-                        <div class="flex-shrink-0 mr-3">
-                           <img class="w-10 h-10 rounded-full" src="{{ Auth::user()->gravatar() }}" alt="{{ $user->name }}">
-                        </div>
-                        <div>
-                           <div class="font-semibold">
-                              {{ $user->name }}
-                           </div>
-                           <div class="text-gray-500 text-sm">
-                              {{ $user->pivot->created_at->diffForHumans() }}
-                           </div>
-                        </div>
-                     </div>
-                  @endforeach
+                  <x-following :users="Auth::user()->follows()->limit(5)->get()"></x-following>
                </div>
             </x-card>
          </div>
+         
       </div>
    </x-container>
 </x-app-layout>

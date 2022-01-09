@@ -1,7 +1,7 @@
 <x-app-layout>
    <div class="border-b -mt-8 py-10">
       <x-container>
-         <div class="flex justify-center">
+         <div class="flex justify-center -ml-5">
             <div class="flex-shrink-0 mr-3">
                <img class="rounded-full w-25 h-25 border-2 border-sky-500 p-1" src="{{ $user->gravatar() }}" alt="{{ $user->name }}">
             </div>
@@ -30,11 +30,8 @@
    </div>
 
    <x-container>
-      <div>
-         <h1 class="font-semibold my-5">My Status</h1>
-         <div class="space-y-5 mb-5">
-            <x-statuses :statuses="$statuses"/>
-         </div>
+      <div class="grid grid-cols-3 gap-5 my-5">
+         <x-following :users="$follows"></x-following>
       </div>
    </x-container>
 </x-app-layout>
